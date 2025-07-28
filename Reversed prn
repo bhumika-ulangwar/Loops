@@ -1,0 +1,25 @@
+//Bhumika Ulangwar
+// 24070123030
+// ENCT A1
+
+
+#include <iostream>
+using namespace std;
+
+int main() {
+    int prn = 23031;  // 
+    int reversed = 0;
+
+    while (prn!= 0) {
+        int digit = prn % 10;
+        reversed = reversed * 10 + digit;
+        prn = prn / 10;
+    }
+
+    cout << "Reversed prn: " << reversed;
+
+    return 0;
+}
+
+//output
+Reversed prn: 13032
