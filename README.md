@@ -85,7 +85,11 @@ A loop is a control structure used to repeat a block of code multiple times unti
 ### ⭐ 1. Right-Angled Triangle Star Pattern
 
 **Pattern:**
+*
 **
+***
+****
+*****
 
 
 **Algorithm:**
