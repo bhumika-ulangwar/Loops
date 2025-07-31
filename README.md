@@ -1,5 +1,5 @@
 # Loops
-# 🔁 Looping Statements in C++
+# 🔁 Looping in C++
 
 ## 🎯 Aim
 To understand and implement looping statements in C++ using:
@@ -16,214 +16,109 @@ To understand and implement looping statements in C++ using:
 
 ---
 
-## 📘 Theory
+## 🧠 Theory
 
 ### 🔁 What is a Loop?
-- Repeats a block of code multiple times.
-- Saves time and avoids manual repetition.
+A loop is a control structure used to repeat a block of code multiple times until a specific condition is met. It helps in avoiding manual repetition of code and enhances efficiency.
 
 ### 🔹 Types of Loops in C++
-- `for` loop
-- `while` loop
+- **For Loop** – Best suited when the number of iterations is known.
+- **While Loop** – Used when the number of iterations is unknown or condition-based.
 
 ---
 
-### ✅ For Loop
+## 📊 Difference Between For and While Loop
 
-Best when the number of repetitions is **known**.
+| Feature           | For Loop                  | While Loop                   |
+|------------------|---------------------------|------------------------------|
+| Use Case         | Known repetition count     | Unknown repetition count     |
+| Initialization   | Inside loop header         | Before loop starts           |
+| Condition Check  | At start of each iteration | At start of each iteration   |
+| Update Step      | Inside loop header         | Inside loop body             |
+| Readability      | More compact               | More flexible for conditions |
 
-```cpp
-for (initialization; condition; update) {
-    // code to repeat
-}
-✅ While Loop
-Used when repetitions are unknown.
 
-cpp
-Copy
-Edit
-while (condition) {
-    // code to repeat
-}
-📊 Difference Between For and While Loop
-Feature	for Loop	while Loop
-Use Case	Known repetition count	Unknown repetition count
-Initialization	Inside loop header	Before loop
-Condition Check	At start of each iteration	At start of each iteration
-Update Step	Inside loop header	Inside loop body
-Readability	Compact	More flexible for complex cases
 
-💻 Programs and Outputs
-1️⃣ Print Even Numbers from 0 to 10 (Using for loop)
+## 🔄 Algorithms
 
-for (int i = 0; i <= 10; i += 2) {
-    cout << i << endl;
-}
-2️⃣ Print "SIT" 5 Times (Using for loop)
+### 🔢 Even Numbers from 0 to 10
+- Start from 0.
+- Increment by 2.
+- Print each value until 10.
 
-for (int i = 1; i <= 5; i++) {
-    cout << "SIT" << endl;
-}
-3️⃣ Password Verification (Using while loop)
+### 🔐 Password Verification
+- Ask the user to set a password.
+- Provide 3 attempts to re-enter the password correctly.
+- On success, print a message and exit loop.
+- On failure, reduce attempts and retry.
 
-#include <iostream>
-#include <string>
-using namespace std;
+### 🔃 Reverse a Number
+- Take a number.
+- Extract digits one by one from the end.
+- Construct the reversed number by multiplying and adding.
+- Repeat until the original number becomes 0.
 
-int main() {
-    string password, input;
-    int attempts = 3;
+---
 
-    cout << "Set your password: ";
-    cin >> password;
+## 🖼️ Pattern Types (Loop-Based)
 
-    cout << "\n---- PASSWORD VERIFICATION ----" << endl;
+### 🌟 Star Patterns
 
-    while (attempts > 0) {
-        cout << "Re-enter your password: ";
-        cin >> input;
+- Right-Angled Triangle
+- Inverted Right-Angled Triangle
+- Mirrored Right-Angled Triangle
+- Equilateral Triangle
+- Inverted Equilateral Triangle
+- Continuous Star Triangle
+- Diamond Pattern
+- Hourglass Pattern
 
-        if (input == password) {
-            cout << "\nPassword verification successful!\n";
-            break;
-        } else {
-            attempts--;
-            cout << "You have " << attempts << " chances left\n";
-        }
-    }
+### 🔢 Number Patterns
 
-    return 0;
-}
-4️⃣ Reverse a Number (Using while loop)
+- Number Triangle (increasing sequence)
+- Number Pyramid (same number per row)
+- Mirrored Number Triangle (right aligned)
+  
 
-int num = 9073363;
-int reversed = 0;
+## 📐 Pattern Algorithms
 
-while (num != 0) {
-    int digit = num % 10;
-    reversed = reversed * 10 + digit;
-    num /= 10;
-}
-cout << "Reversed number: " << reversed;
-🔢 Pattern Printing
-⭐ Right-Angled Triangle
+### ⭐ 1. Right-Angled Triangle Star Pattern
 
-*
+**Pattern:**
 **
-***
-****
-*****
-⭐ Inverted Right-Angled Triangle
 
-*****
-****
-***
-**
-*
-⭐ Mirrored Right-Angled Triangle
-    *
-   **
-  ***
- ****
-*****
-⭐ Equilateral Triangle
 
-    * 
-   * * 
-  * * * 
- * * * * 
-* * * * * 
-⭐ Inverted Equilateral Triangle
+**Algorithm:**
+1. Start a loop from `i = 1` to `n` (rows).
+2. For each row `i`, start a nested loop from `j = 1` to `i`.
+3. Print a star (`*`) inside the inner loop.
+4. After the inner loop ends, go to the next line.
+5. Repeat until all rows are printed.
 
-* * * * * 
- * * * * 
-  * * * 
-   * * 
-    * 
-⭐ Equilateral Triangle (Continuous Stars)
-    *
-   ***
-  *****
- *******
-*********
-💎 Diamond Pattern
+---
 
-    *
-   * *
-  * * *
- * * * *
-* * * * * 
- * * * * 
-  * * * 
-   * * 
-    * 
-⌛ Hourglass Pattern
+### 🔢 2. Number Triangle Pattern
 
- * * * * *
-  * * * *
-   * * *
-    * *
-     *
-    * *
-   * * *
-  * * * *
- * * * * *
-🔢 Number Patterns
-🔹 Number Triangle
-
+**Pattern:**
 1
 2 3
 4 5 6
 7 8 9 10
-11 12 13 14 15
-🔹 Number Pyramid
 
-1
-2 2
-3 3 3
-4 4 4 4
-5 5 5 5 5
-🔹 Mirrored Number Triangle
 
-    1
-   23
-  345
- 4567
-56789
-🔠 Alphabet Patterns
-🔤 Alphabet Pyramid (Continuous)
+**Algorithm:**
+1. Initialize a counter variable to `1`.
+2. Start a loop from `i = 1` to `n` (rows).
+3. For each row `i`, run a nested loop from `j = 1` to `i`.
+4. In the inner loop:
+   - Print the current counter value.
+   - Increment the counter by 1.
+5. Move to the next line after inner loop ends.
+6. Repeat for all rows.
 
-A
-BC
-DEF
-GHIJ
-KLMNO
-🔤 Alphabet Pyramid (Same Letter per Row)
+---
 
-A
-BB
-CCC
-DDDD
-EEEEE
-🔷 Half Diamond Pattern
+## ✅ Conclusion
+Looping is a powerful concept in programming that lets us repeat tasks with ease. By mastering `for` and `while` loops, we can solve mathematical problems, validate user inputs, and generate beautiful output patterns in C++.
 
-*
-**
-***
-****
-*****
-****
-***
-**
-*
-🔷 Half Diamond (Mirrored)
 
-    *
-   **
-  ***
- ****
-*****
- ****
-  ***
-   **
-    *
