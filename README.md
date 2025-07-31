@@ -84,14 +84,6 @@ A loop is a control structure used to repeat a block of code multiple times unti
 
 ### ⭐ 1. Right-Angled Triangle Star Pattern
 
-**Pattern:**
-*
-**
-***
-****
-*****
-
-
 **Algorithm:**
 1. Start a loop from `i = 1` to `n` (rows).
 2. For each row `i`, start a nested loop from `j = 1` to `i`.
@@ -102,14 +94,6 @@ A loop is a control structure used to repeat a block of code multiple times unti
 ---
 
 ### 🔢 2. Number Triangle Pattern
-
-**Pattern:**
-1
-2 3
-4 5 6
-7 8 9 10
-
-
 **Algorithm:**
 1. Initialize a counter variable to `1`.
 2. Start a loop from `i = 1` to `n` (rows).
